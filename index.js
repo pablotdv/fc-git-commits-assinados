@@ -7,7 +7,17 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-// ... (outras partes do seu arquivo)
+app.get('/2', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.get('/3', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.get('/4', (req, res) => {
+    res.send('Hello World!');
+});
 
 if (require.main === module) {
     // Este código será executado apenas se este arquivo for o ponto de entrada principal.
