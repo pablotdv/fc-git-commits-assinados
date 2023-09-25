@@ -7,8 +7,13 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+// ... (outras partes do seu arquivo)
 
-module.exports = app;  // Exportando para teste
+if (require.main === module) {
+    // Este código será executado apenas se este arquivo for o ponto de entrada principal.
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app; // Exporte o app em vez do servidor

@@ -3,13 +3,9 @@ const app = require('./index');
 const { expect } = require('chai');
 
 describe('GET /', () => {
-  it('should respond with Hello World!', done => {
-    request(app)
-      .get('/')
-      .expect(200)
-      .end((err, res) => {
-        expect(res.text).to.equal('Hello World!');
-        done(err);
-      });
+  it('should respond with Hello World!', async () => {
+    const response = await request(app).get('/');
+    expect(response.status).to.equal(200);
+    expect(response.text).to.equal('Hello World!');
   });
 });
